@@ -4,8 +4,11 @@ import string
 from wordcloud import WordCloud
 import matplotlib.pyplot as plt
 from collections import Counter
+import os
 
 # Create your views here.
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+
 
 def main(request):
     return render(request, 'main.html')
@@ -42,7 +45,7 @@ def result(request):
     plt.imshow(wc.generate_from_frequencies(text_dic2))
     plt.axis("off")
     plt.show()    
-    # plt.savefig('wordcount\static\img\wc.png', format='png')        
+    plt.savefig(BASE_DIR + '\\static\\img\\wc.png')        
     words = sorted(text_dic2.items(), key= lambda x: x[1], reverse=True)
     # print(text_dic)
     return render(request, 'result.html', {'words': words})
