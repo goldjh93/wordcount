@@ -8,12 +8,25 @@
 </head>
 <body>
     <h1>안녕하세요 이지형입니다.</h1>
-    이 서비스는 워드 카운트입니다.
-    <a href = {% url 'main' %}>메인으로</a>
+    <h2>이 서비스는 워드 카운트입니다</h2>.<br>
+    <a href = {% url 'main' %} id="about_main">메인으로 ></a>
 </body>
 <style>
     body{
         text-align:center;
+        background-color: #f2f2f2;
     }
+
+    a {
+        text-decoration: none;
+        color: #0066cc;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    #about_main:hover {
+        text-decoration: underline;
+    }
+
 </style>
 </html>

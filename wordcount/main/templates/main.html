@@ -7,17 +7,62 @@
     <title>Document</title>
 </head>
 <body>
-    <h1>WordCount!</h1>
-    <form action={% url 'result' %} method="get">
-        <textarea name="text"></textarea>
-        <button type="submit">submit</button>
-    </form>
-    <a href = {% url 'about' %}>about</a>
+    <div clss="container">
+        <header><h1>WordCount! 단어를 세어드립니다<div class=""></div></h1></header>
+        <form action={% url 'result' %} method="get">
+            <textarea name="text" id="textbox" cols="70" rows="35"></textarea>
+            <br>
+            <button type="submit" id="submit_b">submit</button>
+        </form>
+        <a href = {% url 'about' %} id="about">about ></a>
+    </div>
+
 </body>
 <style>
     body{
         text-align:center;
     }
+
+    textarea {
+        background-color: #f2f2f2;
+    }
+
+    button{
+        color: white;
+        font-size: 25px;
+        font-weight: 400;
+        background-color:#0071E3;
+        border-radius: 20px;
+        padding-left: 11px;
+        padding-right: 11px;
+        padding-top: 4px;
+        padding-bottom: 4px;
+        border: none;
+        cursor: pointer;
+    }
+
+    #submit_b{
+        margin-top: 1rem;
+    }
+
+    #submit_b:hover{
+        background-color: #458BFF;
+    }
+    
+    a {
+        text-decoration: none;
+    }
+
+    #about{
+        color: #0066cc;
+        font-size: 28px;
+        cursor: pointer;
+    }
+
+    #about:hover{
+        text-decoration: underline;
+    }
+
 </style>
 
 </html>

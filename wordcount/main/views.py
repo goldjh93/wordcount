@@ -35,16 +35,17 @@ def result(request):
             text_dic[word] +=1
         else:
             text_dic[word] = 1
-    
+    # 4개 이상 단어만 표시 
     text_dic2={}
     for k, v in text_dic.items():
-        if v>2:
+        if v>3:
             text_dic2[k]=v
-                                
+            
+    #워드 크라우드 만들기                            
     wc = WordCloud(width=1000, height=600, background_color="white", random_state=0, font_path=r'c:\Windows\Fonts\malgun.ttf')
     plt.imshow(wc.generate_from_frequencies(text_dic2))
     plt.axis("off")
-    plt.show()    
+    # plt.show()    
     plt.savefig(BASE_DIR + '\\static\\img\\wc.png')        
     words = sorted(text_dic2.items(), key= lambda x: x[1], reverse=True)
     # print(text_dic)
